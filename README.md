@@ -42,22 +42,22 @@ REQUIREMENTS
         1.  Explain how your data structure accounts for the relationship between the data points you are storing. _Note: Use only appropriate built-in data structures, except dictionaries. You must design, write, implement, and debug all code that you turn in for this assessment. Code downloaded from the Internet or acquired from another student or any other source may not be submitted and will result in automatic failure of this assessment._
         
     E.  Develop a hash table, without using any additional libraries or classes, that has an insertion function that takes the following components as input and inserts the components into the hash table:
-        1.  package ID number
-        2.  delivery address
-        3.  delivery deadline
-        4.  delivery city
-        5.  delivery zip code
-        6.  package weight
-        7.  delivery status (e.g., delivered, en route)
+        1.  Package ID number
+        2.  Delivery address
+        3.  Delivery deadline
+        4.  Delivery city
+        5.  Delivery zip code
+        6.  Package weight
+        7.  Delivery status (e.g., delivered, en route)
         
     F.  Develop a look-up function that takes the following components as input and returns the corresponding data elements:
-        1.  package ID number
-        2.  delivery address
-        3.  delivery deadline
-        4.  delivery city
-        5.  delivery zip code
-        6.  package weight
-        7.  delivery status (i.e., “at the hub,” “en route,” or “delivered”), including the delivery time
+        1.  Package ID number
+        2.  Delivery address
+        3.  Delivery deadline
+        4.  Delivery city
+        5.  Delivery zip code
+        6.  Package weight
+        7.  Delivery status (i.e., “at the hub,” “en route,” or “delivered”), including the delivery time
         
     G.  Provide an interface for the user to view the status and info (as listed in part F) of any package at any time, and the total mileage traveled by all trucks. (The delivery status should report the package as at the hub, en route, or delivered. Delivery status must include the time.)
         1.  Provide screenshots to show the status of all packages at a time between 8:35 a.m. and 9:25 a.m.
