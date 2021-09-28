@@ -1,4 +1,4 @@
-# Steven Hatch - Student ID: 001396379
+# Steven Hatch - Student ID: -
 
 # B3: Space-time Complexity:
     # each major segment of program included in line
