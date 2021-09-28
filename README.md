@@ -1,6 +1,6 @@
-# WGU-C950
+# Data Structures and Algorithms II 
 
-Data Structures and Algorithms II – Performance Assessment
+WGU C950 – Performance Assessment
 
 SCENARIO
 
