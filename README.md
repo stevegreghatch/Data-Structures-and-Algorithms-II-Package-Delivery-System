@@ -3,6 +3,7 @@
 SOLUTION
 
     o  Self-adjusting algorithms
+    
         o  Greedy Algorithm = setPackagesInTrucks()  
         o  Nearest Neighbor Algorithm = setOptimalPackageListAllTrucks()
 
