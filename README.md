@@ -2,11 +2,11 @@
 
 SOLUTION
 
-    o  Self-adjusting algorithms
+       Self-adjusting algorithms
         o  Greedy Algorithm = setPackagesInTrucks()  
         o  Nearest Neighbor Algorithm = setOptimalPackageListAllTrucks()
         
-    o  Overview of Program
+       Overview of Program
         o  Self Adjusting Algorighms
             o  Self-Adjusting Algorithm #1 - Greedy Algorithm - setPackagesInTrucks()
                 o  Overview: algorithm prioritizes earliest deadline times and fills up first two departing trucks (T1 and T2)
