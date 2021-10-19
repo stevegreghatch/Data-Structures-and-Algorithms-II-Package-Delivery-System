@@ -64,9 +64,8 @@ SOLUTION
                     o  Slow if there are a high number of collisions
                     o  Helps to know all possible item keys beforehand (not always available)
 
-    o  Self-adjusting data structure that can be used with self-adjusting algorithms to store the package data
-        o  Hash Table
-
+    o  Self-adjusting data structure that can be used with self-adjusting algorithms to store the package data = Hash Table
+    
         o  Explanation of how data structure accounts for the relationship between the data points being stored
             o  Relationship between data points being stored and hash table
                 o  Data points being stored = package data
