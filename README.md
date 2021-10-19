@@ -166,7 +166,7 @@ SOLUTION
                 o  Breadth-first search
                     o  Breadth-first search “visits a starting vertex, then all vertices of distance 1 from that vertex, then of distance 2, and so on, without revisiting a vertex.”
    
-   o  If I was to do this project again, other than attempting to implement the algorithms previously mentioned, I would do the following
+    o  If I was to do this project again, other than attempting to implement the algorithms previously mentioned, I would do the following
         o  Implement randomization of packages into the truck loading
             o  This could allow for more optimal routes as the result of the lowest total mileage through randomization could be logged, then saved, to place the packages in that specific order, thus decreasing total mileage
         o  Redistribute my functions
