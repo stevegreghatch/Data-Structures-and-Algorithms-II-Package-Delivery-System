@@ -64,11 +64,8 @@ SOLUTION
                     o  Slow if there are a high number of collisions
                     o  Helps to know all possible item keys beforehand (not always available)
 
-    o  Original program written to deliver all packages, meeting all requirements, using the attached supporting documents
-                o  Comments in code have been included to explain process and flow of program.
-
     o  Self-adjusting data structure that can be used with self-adjusting algorithms to store the package data
-        o  hash table
+        o  Hash Table
 
         o  Explanation of how data structure accounts for the relationship between the data points being stored
             o  Relationship between data points being stored and hash table
@@ -88,8 +85,8 @@ SOLUTION
                 o  After determining optimal routes for all trucks, algorithm searches through package objects in hash table to verify that a match has been found between addresses                 in optimalPackageListAddresses (optimal street addresses) and pAddresses (addresses of packages from hash table)
                     o  Once match is found, pID (package ID) is appended to optimalPackageList
 
-    o  Hash table developed without using any additional libraries or classes. Hash table has an insertion function that takes all required components as input and inserts all required components in the hash table 
-        o  see Hash.py, Hash.py – insert, Package.py - packageHashTable.insert(pID, p)
+        o  Hash table developed without using any additional libraries or classes. Hash table has an insertion function that takes all required components as input and inserts all required components in the hash table 
+            o  see Hash.py, Hash.py – insert, Package.py - packageHashTable.insert(pID, p)
 
     o  Look-up function developed that uses package IDs as input and returns all corresponding package data elements 
         o  see Hash.py – search, Package.py – getPackageDataByID
