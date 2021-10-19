@@ -50,38 +50,38 @@ SOLUTION
                         o  mainUserInterface()
 
         Strengths and weaknesses of the self-adjusting data structures:
-        o	Hash Table
-            o	Strengths
-                o	Allows for fast inserts, searches, and removals (up to O(1))
-                o	Easy to implement (python has built-in hash() function)
-                o	Excellent for data integrity verification and cryptography
-            o	Weaknesses
-                o	Needs to be designed to avoid collisions
-                o	Slow if there are a high number of collisions
-                o	Helps to know all possible item keys beforehand (not always available)
+        o  Hash Table
+            o  Strengths
+                o  Allows for fast inserts, searches, and removals (up to O(1))
+                o  Easy to implement (python has built-in hash() function)
+                o  Excellent for data integrity verification and cryptography
+            o  Weaknesses
+                o  Needs to be designed to avoid collisions
+                o  Slow if there are a high number of collisions
+                o  Helps to know all possible item keys beforehand (not always available)
 
     Original program written to deliver all packages, meeting all requirements, using the attached supporting documents
-                o   Comments in code have been included to explain process and flow of program.
+                o  Comments in code have been included to explain process and flow of program.
 
     Self-adjusting data structure that can be used with self-adjusting algorithms to store the package data = hash table
 
         Explanation of how data structure accounts for the relationship between the data points being stored
-            o	Relationship between data points being stored and hash table
-                o	Data points being stored = package data
-                o	Package data is stored in hash table as package objects
-                    o	p = Package( pID, pAddress, pCity, pState, pZipCode, pDeadline, pWeight, pSpecialNotes, pStatus)
-                    o	Inserted into hash table as packageHashTable.insert(pID, p)
-                        o	pID = key to search, insert(update/insert new), and remove package object from hash table
-            o	Hash table retrieves information accurately and more efficiently than linear search due to its bucket design
-                o	Bucket is determined by hash(key) % len(self.table)
-                    o	ex. package 40
-                        o	Instead of searching 1-40 to find p40 (linear search) (O(N)), hash table allows for p40 to be placed in bucket 0 and found at O(1)
-            o	Relationship between self-adjusting algorithm #1 (greedy algorithm) and hash table
-                o	Algorithm searches through all package objects in hash table to build package list sorted by pDeadline (delivery deadlines)
-                    o	This list (sortedDeadlineList) is then implemented to set packages with earlier delivery deadlines to the trucks departing earliest
-            o	Relationship between self-adjusting algorithm #2 (nearest neighbor) and hash table
-                o	After determining optimal routes for all trucks, algorithm searches through package objects in hash table to verify that a match has been found between addresses                 in optimalPackageListAddresses (optimal street addresses) and pAddresses (addresses of packages from hash table)
-                    o	Once match is found, pID (package ID) is appended to optimalPackageList
+            o  Relationship between data points being stored and hash table
+                o  Data points being stored = package data
+                o  Package data is stored in hash table as package objects
+                    o  p = Package( pID, pAddress, pCity, pState, pZipCode, pDeadline, pWeight, pSpecialNotes, pStatus)
+                    o  Inserted into hash table as packageHashTable.insert(pID, p)
+                        o  pID = key to search, insert(update/insert new), and remove package object from hash table
+            o  Hash table retrieves information accurately and more efficiently than linear search due to its bucket design
+                o  Bucket is determined by hash(key) % len(self.table)
+                    o  ex. package 40
+                        o  Instead of searching 1-40 to find p40 (linear search) (O(N)), hash table allows for p40 to be placed in bucket 0 and found at O(1)
+            o  Relationship between self-adjusting algorithm #1 (greedy algorithm) and hash table
+                o  Algorithm searches through all package objects in hash table to build package list sorted by pDeadline (delivery deadlines)
+                    o  This list (sortedDeadlineList) is then implemented to set packages with earlier delivery deadlines to the trucks departing earliest
+            o  Relationship between self-adjusting algorithm #2 (nearest neighbor) and hash table
+                o  After determining optimal routes for all trucks, algorithm searches through package objects in hash table to verify that a match has been found between addresses                 in optimalPackageListAddresses (optimal street addresses) and pAddresses (addresses of packages from hash table)
+                    o  Once match is found, pID (package ID) is appended to optimalPackageList
 
     Hash table developed without using any additional libraries or classes. Hash table has an insertion function that takes all required components as input and inserts all required components in the hash table 
         o	see Hash.py, Hash.py – insert, Package.py - packageHashTable.insert(pID, p)
