@@ -118,7 +118,7 @@ SOLUTION
                     o  Appends duplicate delivery address after first instance of address to maintain optimal route / package list order
                     o  see Distance.py, loopToSetAllAddressesInOptimalRouteOrder
 
-        o  Verification that the algorithm used meets all requirements:
+        o  Verification that the algorithm used meets all requirements
             o  Total combined miles traveled by all trucks = 130.7 miles
                 o  Can verify through user interface, ‘View Truck Data’
                 o  Can also verify by enabling the following print functions:
