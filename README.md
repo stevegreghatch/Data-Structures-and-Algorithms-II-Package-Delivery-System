@@ -2,25 +2,26 @@
 
 SOLUTION
 
-    Self-adjusting algorithms: Greedy Algorithm = setPackagesInTrucks() and Nearest Neighbor Algorithm = setOptimalPackageListAllTrucks()
+    Self-adjusting algorithms: 
+        o   Greedy Algorithm = setPackagesInTrucks()  
+        o   Nearest Neighbor Algorithm = setOptimalPackageListAllTrucks()
 
     Overview of Program:
 
         Self Adjusting Algorighms:
         o	Self-Adjusting Algorithm #1 - Greedy Algorithm - setPackagesInTrucks()
             o	Overview: algorithm prioritizes earliest deadline times and fills up first two departing trucks (T1 and T2)
-            o	algorithm gets list of all packages sorted by earliest deadline from getPackageDeliveryDeadlineList()
-            o	algorithm places packages in first two trucks until they are full (# 14 package limit for equal distribution)
-            o	algorithm places remaining packages in truck departing latest (T3)
-            o	while placing packages, algorithm appends each package to packagesAlreadyPlaced list to prevent duplicates in event that algorithm needs to be called again (if deadlines change, if total number of packages change, etc.)
+                o	algorithm gets list of all packages sorted by earliest deadline from getPackageDeliveryDeadlineList()
+                o	algorithm places packages in first two trucks until they are full (# 14 package limit for equal distribution)
+                o	algorithm places remaining packages in truck departing latest (T3)
+                o	while placing packages, algorithm appends each package to packagesAlreadyPlaced list to prevent duplicates in event that algorithm needs to be called again (if deadlines change, if total number of packages change, etc.)
 
         o	Self-Adjusting Algorithm #2 - Nearest Neighbor Algorithm - setOptimalPackageListAllTrucks()
-            o	Found in Distance.py at line 425
             o	Overview: algorithm sets optimal package list order to minimize route mileage for each truck
-            o	algorithm searches all possible destinations to determine shortest location from hub, then loops to determine shortest distance from each location to the next, then optimally sets address key/names - loopToSetAllAddressesInOptimalRouteOrder() - getShortestDistanceFromHub(), getNextShortestDistanceForRouteList()
-            o	algorithm then converts optimally sorted address key/names into optimally sorted street addresses - setOptimalPackageListAddressesT1()
-            o	algorithm then matches optimally sorted street addresses to package delivery destinations and sets package IDs in optimal order - setOptimalPackageListT1()
-            o	algorithm then replaces packageList with optimalPackageList
+                o	algorithm searches all possible destinations to determine shortest location from hub, then loops to determine shortest distance from each location to the                         next, then optimally sets address key/names - loopToSetAllAddressesInOptimalRouteOrder() - getShortestDistanceFromHub(), getNextShortestDistanceForRouteList()
+                o	algorithm then converts optimally sorted address key/names into optimally sorted street addresses - setOptimalPackageListAddressesT1()
+                o	algorithm then matches optimally sorted street addresses to package delivery destinations and sets package IDs in optimal order - setOptimalPackageListT1()
+                o	algorithm then replaces packageList with optimalPackageList
 
         Environment: PyCharm on Windows 10 64-bit OS
 
