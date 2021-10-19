@@ -59,7 +59,7 @@ SOLUTION
                     
        Self-Adjusting Data Structure That Can Be Used With Self-Adjusting Algorithms To Store The Package Data = Hash Table
         o  Explanation Of Gow Data Structure Accounts For The Relationship Between The Data Points Being Stored
-            o  Relationship between data points being stored and hash table
+            o  Relationship Between Data Points Being Stored And Hash Table
                 o  Data points being stored = package data
                 o  Package data is stored in hash table as package objects
                     o  p = Package( pID, pAddress, pCity, pState, pZipCode, pDeadline, pWeight, pSpecialNotes, pStatus)
@@ -69,10 +69,10 @@ SOLUTION
                 o  Bucket is determined by hash(key) % len(self.table)
                     o  Ex. package 40
                         o  Instead of searching 1-40 to find p40 (linear search) (O(N)), hash table allows for p40 to be placed in bucket 0 and found at O(1)
-            o  Relationship between self-adjusting algorithm #1 (greedy algorithm) and hash table
+            o  Relationship Between Self-Adjusting Algorithm #1 (Greedy Algorithm) and Hash Table
                 o  Algorithm searches through all package objects in hash table to build package list sorted by pDeadline (delivery deadlines)
                     o  This list (sortedDeadlineList) is then implemented to set packages with earlier delivery deadlines to the trucks departing earliest
-            o  Relationship between self-adjusting algorithm #2 (nearest neighbor) and hash table
+            o  Relationship Between Self-Adjusting Algorithm #2 (Nearest Neighbor) and Hash Table
                 o  After determining optimal routes for all trucks, algorithm searches through package objects in hash table to verify that a match has been found between addresses in optimalPackageListAddresses (optimal street addresses) and pAddresses (addresses of packages from hash table)
                     o  Once match is found, pID (package ID) is appended to optimalPackageList
         o  Hash Table developed without using any additional libraries or classes. Hash Table has an insertion function that takes all required components as input and inserts all required components in the hash table 
@@ -108,7 +108,7 @@ SOLUTION
                         o  setTotalRouteMileageAllTrucks(), print(mileageToSetT1)
                         o  setTotalRouteMileageAllTrucks(), print(mileageToSetT2)
                         o  setTotalRouteMileageAllTrucks(), print(mileageToSetT3)
-            o  All packages were delivered on time
+            o  All Packages Were Delivered On Time
                 o  Can verify through user interface, enter time >= 1159
                 o  Can also verify by enabling the following print functions:
                 o  Distance.py (float list of route distance ---- last distance = distance to hub)
@@ -123,7 +123,7 @@ SOLUTION
                     o  setAndReturnDeliveryTimesT1(), print(deliveryTimesToReturnT1)
                     o  setAndReturnDeliveryTimesT2(), print(deliveryTimesToReturnT2)
                     o  setAndReturnDeliveryTimesT3(), print(deliveryTimesToReturnT3)
-            o  All packages were delivered according to their delivery specifications
+            o  All Packages Were Delivered According To Their Delivery Specifications
                 o  Packages 13, 14, 15, 16, 19, and 20 initialized in truck 1
                     o  Meets requirement of being out for delivery on same truck
                     o  To verify, see Self_Adjusting_Algorithms.py, packageListT1
@@ -166,7 +166,7 @@ SOLUTION
             o  Most of them ended up being more conveniently placed in the Distance.py file (leaving the other files sparser)
             
        Justification Of The Data Structure (Hash Table)
-        o  Verification that the data structure used meets all requirements in the scenario
+        o  Verification That The Data Structure Used Meets All Requirements In The Scenario
             o  Total combined miles traveled by all trucks = 130.7 miles
             o  All packages were delivered on time
             o  All packages were delivered according to their delivery specifications
