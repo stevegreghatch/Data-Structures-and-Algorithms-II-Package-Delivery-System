@@ -3,51 +3,51 @@
 SOLUTION
 
     Self-adjusting algorithms: 
-        o   Greedy Algorithm = setPackagesInTrucks()  
-        o   Nearest Neighbor Algorithm = setOptimalPackageListAllTrucks()
+        o  Greedy Algorithm = setPackagesInTrucks()  
+        o  Nearest Neighbor Algorithm = setOptimalPackageListAllTrucks()
 
     Overview of Program:
         Self Adjusting Algorighms:
-        o	Self-Adjusting Algorithm #1 - Greedy Algorithm - setPackagesInTrucks()
-            o	Overview: algorithm prioritizes earliest deadline times and fills up first two departing trucks (T1 and T2)
-                o	algorithm gets list of all packages sorted by earliest deadline from getPackageDeliveryDeadlineList()
-                o	algorithm places packages in first two trucks until they are full (# 14 package limit for equal distribution)
-                o	algorithm places remaining packages in truck departing latest (T3)
-                o	while placing packages, algorithm appends each package to packagesAlreadyPlaced list to prevent duplicates in event that algorithm needs to be called again (if deadlines change, if total number of packages change, etc.)
-        o	Self-Adjusting Algorithm #2 - Nearest Neighbor Algorithm - setOptimalPackageListAllTrucks()
-            o	Overview: algorithm sets optimal package list order to minimize route mileage for each truck
-                o	algorithm searches all possible destinations to determine shortest location from hub, then loops to determine shortest distance from each location to the                         next, then optimally sets address key/names - loopToSetAllAddressesInOptimalRouteOrder() - getShortestDistanceFromHub(), getNextShortestDistanceForRouteList()
-                o	algorithm then converts optimally sorted address key/names into optimally sorted street addresses - setOptimalPackageListAddressesT1()
-                o	algorithm then matches optimally sorted street addresses to package delivery destinations and sets package IDs in optimal order - setOptimalPackageListT1()
-                o	algorithm then replaces packageList with optimalPackageList
+        o  Self-Adjusting Algorithm #1 - Greedy Algorithm - setPackagesInTrucks()
+            o  Overview: algorithm prioritizes earliest deadline times and fills up first two departing trucks (T1 and T2)
+                o  algorithm gets list of all packages sorted by earliest deadline from getPackageDeliveryDeadlineList()
+                o  algorithm places packages in first two trucks until they are full (# 14 package limit for equal distribution)
+                o  algorithm places remaining packages in truck departing latest (T3)
+                o  while placing packages, algorithm appends each package to packagesAlreadyPlaced list to prevent duplicates in event that algorithm needs to be called again (if deadlines change, if total number of packages change, etc.)
+        o  Self-Adjusting Algorithm #2 - Nearest Neighbor Algorithm - setOptimalPackageListAllTrucks()
+            o   Overview: algorithm sets optimal package list order to minimize route mileage for each truck
+                o  algorithm searches all possible destinations to determine shortest location from hub, then loops to determine shortest distance from each location to the                         next, then optimally sets address key/names - loopToSetAllAddressesInOptimalRouteOrder() - getShortestDistanceFromHub(), getNextShortestDistanceForRouteList()
+                o  algorithm then converts optimally sorted address key/names into optimally sorted street addresses - setOptimalPackageListAddressesT1()
+                o  algorithm then matches optimally sorted street addresses to package delivery destinations and sets package IDs in optimal order - setOptimalPackageListT1()
+                o  algorithm then replaces packageList with optimalPackageList
 
         Environment: PyCharm on Windows 10 64-bit OS
 
         Space-Time Complexity: Complexity of each major segment of program, and the entire program, using big-0 notation included in code comments
 
         Capability of solution to scale and adapt to a growing number of packages:
-            o	Hash table includes parameter to change initial capacity, allowing for additional package storage
-            o	CSV import is capable of reading and storing additional packages from larger package lists
-            o	Self-adjusting algorithm #1: packages are self-placed into trucks based on delivery deadline and truck departure time
-            o	Self-adjusting algorithm #2: packages are self-sorted to determine optimal delivery route (lowest mileage)
-            o	Main function deliveryAddressUpdateCheck: updates package delivery address based on specified criteria then re-initializes data
-            o	Identified constraints are number of trucks, overall truck package capacity, and number of truck drivers
+            o  Hash table includes parameter to change initial capacity, allowing for additional package storage
+            o  CSV import is capable of reading and storing additional packages from larger package lists
+            o  Self-adjusting algorithm #1: packages are self-placed into trucks based on delivery deadline and truck departure time
+            o  Self-adjusting algorithm #2: packages are self-sorted to determine optimal delivery route (lowest mileage)
+            o  Main function deliveryAddressUpdateCheck: updates package delivery address based on specified criteria then re-initializes data
+            o  Identified constraints are number of trucks, overall truck package capacity, and number of truck drivers
 
         Discussion of why the software is efficient and easy to maintain:
-            o	Efficiency: 
-                o	Big-O time complexity of entire program = O(N^2) quadratic
-                o	User Interface:
-                    o	Straightforward prompts for user to get desired data
-            o	Maintainability for Future Developers: 
-                o	Code structure: 
-                    o	Each py file follows same formation (ex. initialization, functions)
-                o	Code comments:
-                    o	Each major section of code is labeled with its purpose
-                o	Compartmentalization:
-                    o	All major functions have been combined for easier readability (ex. setTotalRouteMileageAllTrucks instead of setForT1, setForT2, setForT3 
-                    o	Main file only requires two function calls
-                        o	mainUserInterfaceInit()
-                        o	mainUserInterface()
+            o  Efficiency: 
+                o  Big-O time complexity of entire program = O(N^2) quadratic
+                o  User Interface:
+                    o  Straightforward prompts for user to get desired data
+            o  Maintainability for Future Developers: 
+                o  Code structure: 
+                    o  Each py file follows same formation (ex. initialization, functions)
+                o  Code comments:
+                    o  Each major section of code is labeled with its purpose
+                o  Compartmentalization:
+                    o  All major functions have been combined for easier readability (ex. setTotalRouteMileageAllTrucks instead of setForT1, setForT2, setForT3 
+                    o  Main file only requires two function calls
+                        o  mainUserInterfaceInit()
+                        o  mainUserInterface()
 
         Strengths and weaknesses of the self-adjusting data structures:
         o	Hash Table
