@@ -58,7 +58,7 @@ SOLUTION
                     o  Helps to know all possible item keys beforehand (not always available)
                     
        Self-Adjusting Data Structure That Can Be Used With Self-Adjusting Algorithms To Store The Package Data = Hash Table
-        o  Explanation Of Gow Data Structure Accounts For The Relationship Between The Data Points Being Stored
+        o  Explanation Of How Data Structure Accounts For The Relationship Between The Data Points Being Stored
             o  Relationship Between Data Points Being Stored And Hash Table
                 o  Data points being stored = package data
                 o  Package data is stored in hash table as package objects
