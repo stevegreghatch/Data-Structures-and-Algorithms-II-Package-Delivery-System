@@ -5,6 +5,7 @@ SOLUTION
     o  Self-adjusting algorithms
         o  Greedy Algorithm = setPackagesInTrucks()  
         o  Nearest Neighbor Algorithm = setOptimalPackageListAllTrucks()
+        
     o  Overview of Program
         o  Self Adjusting Algorighms
             o  Self-Adjusting Algorithm #1 - Greedy Algorithm - setPackagesInTrucks()
@@ -55,6 +56,7 @@ SOLUTION
                     o  Needs to be designed to avoid collisions
                     o  Slow if there are a high number of collisions
                     o  Helps to know all possible item keys beforehand (not always available)
+                    
     o  Self-adjusting data structure that can be used with self-adjusting algorithms to store the package data = Hash Table
         o  Explanation of how data structure accounts for the relationship between the data points being stored
             o  Relationship between data points being stored and hash table
@@ -75,16 +77,20 @@ SOLUTION
                     o  Once match is found, pID (package ID) is appended to optimalPackageList
         o  Hash table developed without using any additional libraries or classes. Hash table has an insertion function that takes all required components as input and inserts all required components in the hash table 
             o  see Hash.py, Hash.py – insert, Package.py - packageHashTable.insert(pID, p)
+            
     o  Look-up function developed that uses package IDs as input and returns all corresponding package data elements 
         o  see Hash.py – search, Package.py – getPackageDataByID
+        
     o  User interface provided that allows viewing of status and info of any package at any time, and the total mileage traveled by all trucks
         o  see Main.py – mainUserInterface
         o  all screenshots are included in zip file submission in project_screenshots folder
             o  screenshot of the status of all packages at a time between 8:35am and 9:25am (time=8:45am)
             o  screenshot of the status of all packages at a time between 9:35am and 10:25am (time=10:15am)
             o  screenshot of the status of all packages at a time between 12:03pm and 1:12pm (time=1:05pm/13:05 military time) 
+            
     o  Screenshot provided showing successful completion of the code, free from runtime errors or warnings, that includes total mileage traveled by all trucks
         o  screenshot included in zip file submission in project_screenshots folder
+        
     o  Justification of core algorithms
         o  Strengths of the algorithms used
             o  Self-Adjusting Algorithm #1 - Greedy Algorithm - setPackagesInTrucks()
@@ -159,11 +165,13 @@ SOLUTION
                     o  Dijkstra’s algorithm “finds the shortest path from a start vertex to each vertex in a graph”
                 o  Breadth-first search
                     o  Breadth-first search “visits a starting vertex, then all vertices of distance 1 from that vertex, then of distance 2, and so on, without revisiting a vertex.”
-    o  If I was to do this project again, other than attempting to implement the algorithms previously mentioned, I would do the following
+   
+   o  If I was to do this project again, other than attempting to implement the algorithms previously mentioned, I would do the following
         o  Implement randomization of packages into the truck loading
             o  This could allow for more optimal routes as the result of the lowest total mileage through randomization could be logged, then saved, to place the packages in that specific order, thus decreasing total mileage
         o  Redistribute my functions
             o  Most of them ended up being more conveniently placed in the Distance.py file (leaving the other files sparser)
+            
     o  Justification of the data structure (hash table)
         o  Verification that the data structure used meets all requirements in the scenario
             o  Total combined miles traveled by all trucks = 130.7 miles
@@ -181,6 +189,7 @@ SOLUTION
                 o  As the hash table is only implemented to store package data, changes specific to the number of trucks or the number of cities would not directly affect the look-up time or the space usage of the data structure
                 o  However, alongside the assumption that more packages would need to be delivered (based on in increase in the number of trucks and delivery to more cities), the look-up function would become slower due to collisions as more packages would need to be added to the table
                 o  Look-up speed could be increased at the cost of additional space usage (more buckets would need to be added)
+                
     o  Two other data structures that could meet the same requirements in the scenario
         o  Data structure 1 = Dictionary / Nested Dictionary 
             o  Rather than storing packages as objects in the hash table, packages could be stored as key/value(s) pair in a dictionary
