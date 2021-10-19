@@ -14,7 +14,6 @@ SOLUTION
                 o	algorithm places packages in first two trucks until they are full (# 14 package limit for equal distribution)
                 o	algorithm places remaining packages in truck departing latest (T3)
                 o	while placing packages, algorithm appends each package to packagesAlreadyPlaced list to prevent duplicates in event that algorithm needs to be called again (if deadlines change, if total number of packages change, etc.)
-
         o	Self-Adjusting Algorithm #2 - Nearest Neighbor Algorithm - setOptimalPackageListAllTrucks()
             o	Overview: algorithm sets optimal package list order to minimize route mileage for each truck
                 o	algorithm searches all possible destinations to determine shortest location from hub, then loops to determine shortest distance from each location to the                         next, then optimally sets address key/names - loopToSetAllAddressesInOptimalRouteOrder() - getShortestDistanceFromHub(), getNextShortestDistanceForRouteList()
