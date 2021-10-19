@@ -2,51 +2,51 @@
 
 SOLUTION
 
-       Self-adjusting algorithms
+       Self-Adjusting Algorithms
         o  Greedy Algorithm = setPackagesInTrucks()  
         o  Nearest Neighbor Algorithm = setOptimalPackageListAllTrucks()
         
-       Overview of Program
+       Overview Of Program
         o  Self Adjusting Algorighms
             o  Self-Adjusting Algorithm #1 - Greedy Algorithm - setPackagesInTrucks()
-                o  Overview: algorithm prioritizes earliest deadline times and fills up first two departing trucks (T1 and T2)
-                    o  algorithm gets list of all packages sorted by earliest deadline from getPackageDeliveryDeadlineList()
-                    o  algorithm places packages in first two trucks until they are full (# 14 package limit for equal distribution)
-                    o  algorithm places remaining packages in truck departing latest (T3)
-                    o  while placing packages, algorithm appends each package to packagesAlreadyPlaced list to prevent duplicates in event that algorithm needs to be called again (if deadlines change, if total number of packages change, etc.)
+                o  Algorithm prioritizes earliest deadline times and fills up first two departing trucks (T1 and T2)
+                    o  Gets list of all packages sorted by earliest deadline from getPackageDeliveryDeadlineList()
+                    o  Places packages in first two trucks until they are full (# 14 package limit for equal distribution)
+                    o  Places remaining packages in truck departing latest (T3)
+                    o  While placing packages, algorithm appends each package to packagesAlreadyPlaced list to prevent duplicates in event that algorithm needs to be called again (if deadlines change, if total number of packages change, etc.)
             o  Self-Adjusting Algorithm #2 - Nearest Neighbor Algorithm - setOptimalPackageListAllTrucks()
-                o   Overview: algorithm sets optimal package list order to minimize route mileage for each truck
-                    o  algorithm searches all possible destinations to determine shortest location from hub, then loops to determine shortest distance from each location to the                         next, then optimally sets address key/names - loopToSetAllAddressesInOptimalRouteOrder() - getShortestDistanceFromHub(), getNextShortestDistanceForRouteList()
-                    o  algorithm then converts optimally sorted address key/names into optimally sorted street addresses - setOptimalPackageListAddressesT1()
-                    o  algorithm then matches optimally sorted street addresses to package delivery destinations and sets package IDs in optimal order - setOptimalPackageListT1()
-                    o  algorithm then replaces packageList with optimalPackageList
+                o   Algorithm sets optimal package list order to minimize route mileage for each truck
+                    o   searches all possible destinations to determine shortest location from hub, then loops to determine shortest distance from each location to the next, then optimally sets address key/names - loopToSetAllAddressesInOptimalRouteOrder() - getShortestDistanceFromHub(), getNextShortestDistanceForRouteList()
+                    o   Converts optimally sorted address key/names into optimally sorted street addresses - setOptimalPackageListAddressesT1()
+                    o   Matches optimally sorted street addresses to package delivery destinations and sets package IDs in optimal order - setOptimalPackageListT1()
+                    o   Replaces packageList with optimalPackageList
         o  Environment
             o  PyCharm on Windows 10 64-bit OS
         o  Space-Time Complexity
             o  Complexity of each major segment of program, and the entire program, using big-0 notation included in code comments
-        o  Capability of solution to scale and adapt to a growing number of packages
+        o  Capability Of Solution To Scale And Adapt To A Growing Number of Packages
             o  Hash table includes parameter to change initial capacity, allowing for additional package storage
             o  CSV import is capable of reading and storing additional packages from larger package lists
             o  Self-adjusting algorithm #1: packages are self-placed into trucks based on delivery deadline and truck departure time
             o  Self-adjusting algorithm #2: packages are self-sorted to determine optimal delivery route (lowest mileage)
             o  Main function deliveryAddressUpdateCheck: updates package delivery address based on specified criteria then re-initializes data
             o  Identified constraints are number of trucks, overall truck package capacity, and number of truck drivers
-        o  Discussion of why the software is efficient and easy to maintain
+        o  Discussion Of Why The Software Is Efficient and Easy To Maintain
             o  Efficiency 
                 o  Big-O time complexity of entire program = O(N^2) quadratic
                 o  User Interface
                     o  Straightforward prompts for user to get desired data
             o  Maintainability for Future Developers
-                o  Code structure 
+                o  Code Structure 
                     o  Each py file follows same formation (ex. initialization, functions)
-                o  Code comments
+                o  Code Comments
                     o  Each major section of code is labeled with its purpose
                 o  Compartmentalization
                     o  All major functions have been combined for easier readability (ex. setTotalRouteMileageAllTrucks instead of setForT1, setForT2, setForT3 
                     o  Main file only requires two function calls
                         o  mainUserInterfaceInit()
                         o  mainUserInterface()
-        o  Strengths and weaknesses of the self-adjusting data structures
+        o  Strengths And Weaknesses Of The Self-Adjusting Data Structures
             o  Hash Table
                 o  Strengths
                     o  Allows for fast inserts, searches, and removals (up to O(1))
@@ -57,57 +57,50 @@ SOLUTION
                     o  Slow if there are a high number of collisions
                     o  Helps to know all possible item keys beforehand (not always available)
                     
-       Self-adjusting data structure that can be used with self-adjusting algorithms to store the package data = Hash Table
-        o  Explanation of how data structure accounts for the relationship between the data points being stored
+       Self-Adjusting Data Structure That Can Be Used With Self-Adjusting Algorithms To Store The Package Data = Hash Table
+        o  Explanation Of Gow Data Structure Accounts For The Relationship Between The Data Points Being Stored
             o  Relationship between data points being stored and hash table
                 o  Data points being stored = package data
                 o  Package data is stored in hash table as package objects
                     o  p = Package( pID, pAddress, pCity, pState, pZipCode, pDeadline, pWeight, pSpecialNotes, pStatus)
                     o  Inserted into hash table as packageHashTable.insert(pID, p)
                         o  pID = key to search, insert(update/insert new), and remove package object from hash table
-            o  Hash table retrieves information accurately and more efficiently than linear search due to its bucket design
+            o  Hash Table retrieves information accurately and more efficiently than linear search due to its bucket design
                 o  Bucket is determined by hash(key) % len(self.table)
-                    o  ex. package 40
+                    o  Ex. package 40
                         o  Instead of searching 1-40 to find p40 (linear search) (O(N)), hash table allows for p40 to be placed in bucket 0 and found at O(1)
             o  Relationship between self-adjusting algorithm #1 (greedy algorithm) and hash table
                 o  Algorithm searches through all package objects in hash table to build package list sorted by pDeadline (delivery deadlines)
                     o  This list (sortedDeadlineList) is then implemented to set packages with earlier delivery deadlines to the trucks departing earliest
             o  Relationship between self-adjusting algorithm #2 (nearest neighbor) and hash table
-                o  After determining optimal routes for all trucks, algorithm searches through package objects in hash table to verify that a match has been found between addresses                 in optimalPackageListAddresses (optimal street addresses) and pAddresses (addresses of packages from hash table)
+                o  After determining optimal routes for all trucks, algorithm searches through package objects in hash table to verify that a match has been found between addresses in optimalPackageListAddresses (optimal street addresses) and pAddresses (addresses of packages from hash table)
                     o  Once match is found, pID (package ID) is appended to optimalPackageList
-        o  Hash table developed without using any additional libraries or classes. Hash table has an insertion function that takes all required components as input and inserts all required components in the hash table 
-            o  see Hash.py, Hash.py – insert, Package.py - packageHashTable.insert(pID, p)
+        o  Hash Table developed without using any additional libraries or classes. Hash Table has an insertion function that takes all required components as input and inserts all required components in the hash table 
+            o  See Hash.py, Hash.py – insert, Package.py - packageHashTable.insert(pID, p)
             
-       Look-up function developed that uses package IDs as input and returns all corresponding package data elements 
-        o  see Hash.py – search, Package.py – getPackageDataByID
+       Look-Up Function Developed That Uses Package IDs As Input And Returns All Corresponding Package Data Elements 
+        o  See Hash.py – search, Package.py – getPackageDataByID
         
-       User interface provided that allows viewing of status and info of any package at any time, and the total mileage traveled by all trucks
-        o  see Main.py – mainUserInterface
-        o  all screenshots are included in zip file submission in project_screenshots folder
-            o  screenshot of the status of all packages at a time between 8:35am and 9:25am (time=8:45am)
-            o  screenshot of the status of all packages at a time between 9:35am and 10:25am (time=10:15am)
-            o  screenshot of the status of all packages at a time between 12:03pm and 1:12pm (time=1:05pm/13:05 military time) 
-            
-       Screenshot provided showing successful completion of the code, free from runtime errors or warnings, that includes total mileage traveled by all trucks
-        o  screenshot included in zip file submission in project_screenshots folder
+       User Interface Provided That Allows Viewing Of Status And Info Of Any Package At Any Time, And The Total Mileage Traveled by All Trucks
+        o  See Main.py – mainUserInterface
         
-       Justification of core algorithms
-        o  Strengths of the algorithms used
+       Justification Of Core Algorithms
+        o  Strengths Of The Algorithms Used
             o  Self-Adjusting Algorithm #1 - Greedy Algorithm - setPackagesInTrucks()
                 o  Ensures that packages with earliest delivery times are placed on first departing trucks
                     o  Aims to prevent delivery past delivery deadline
                         o  Works for this project (unsure about scalability)
-                o  Prevents duplicate packages being added to trucks (in event that algorithm needs to be called again (if deadlines change, if total number of packages                 change, etc.)
+                o  Prevents duplicate packages being added to trucks (in event that algorithm needs to be called again (if deadlines change, if total number of packages change, etc.)
                     o  see Self_Adjusting_Algorithms.py, packagesAlreadyPlaced
             o  Self-Adjusting Algorithm #2 - Nearest Neighbor Algorithm - setOptimalPackageListAllTrucks()
                 o  Sets optimal package list order to minimize route mileage for each truck
                 o  Allows flexibility of package list size
                     o  Based on number of packages in truck == number of unique address + duplicate address
-                    o  see Distance.py, loopToSetAllAddressesInOptimalRouteOrder
+                    o  See Distance.py, loopToSetAllAddressesInOptimalRouteOrder
                 o  Accounts for duplicate delivery addresses
                     o  Appends duplicate delivery address after first instance of address to maintain optimal route / package list order
-                    o  see Distance.py, loopToSetAllAddressesInOptimalRouteOrder
-        o  Verification that the algorithm used meets all requirements
+                    o  See Distance.py, loopToSetAllAddressesInOptimalRouteOrder
+        o  Verification That The Algorithm Used Meets All Requirements
             o  Total combined miles traveled by all trucks = 130.7 miles
                 o  Can verify through user interface, ‘View Truck Data’
                 o  Can also verify by enabling the following print functions:
@@ -153,26 +146,26 @@ SOLUTION
                     o  Meets requirement of not being delivered until 10:20am
                     o  To verify, see package 9 delivery time through UI console output
                         o  Package 9 is delivered at 10:33am         
-           Two other named algorithms, different from the algorithms implemented, that would meet the requirements in the scenario
+           Two Other Named Algorithms, Different From The Algorithms Implemented, That Would Meet The Rrequirements In The Scenario
             o  Dijkstra’s Shortest Path Algorithm
                 o  Could be implemented to minimize total mileage
-            o  Breadth-first search
+            o  Breadth-First Search
                 o  Could also be implemented to minimize total mileage
-            o  How both algorithms differ from my algorithm
+            o  How Both Algorithms Differ from my Algorithm
                 o  My solution is not graph based
                 o  My solution only finds the shortest path from one location to the next (irrespective of each location’s distance from starting location / hub)
                 o  Dijkstra’s Shortest Path Algorithm
                     o  Dijkstra’s algorithm “finds the shortest path from a start vertex to each vertex in a graph”
-                o  Breadth-first search
-                    o  Breadth-first search “visits a starting vertex, then all vertices of distance 1 from that vertex, then of distance 2, and so on, without revisiting a vertex.”
+                o  Breadth-First search
+                    o  Breadth-First search “visits a starting vertex, then all vertices of distance 1 from that vertex, then of distance 2, and so on, without revisiting a vertex.”
    
-       If I was to do this project again, other than attempting to implement the algorithms previously mentioned, I would do the following
+       If I Was To Do This Project Again, Other Than Attempting To Implement The Algorithms Previously Mentioned, I Would Do The Following
         o  Implement randomization of packages into the truck loading
             o  This could allow for more optimal routes as the result of the lowest total mileage through randomization could be logged, then saved, to place the packages in that specific order, thus decreasing total mileage
         o  Redistribute my functions
             o  Most of them ended up being more conveniently placed in the Distance.py file (leaving the other files sparser)
             
-       Justification of the data structure (hash table)
+       Justification Of The Data Structure (Hash Table)
         o  Verification that the data structure used meets all requirements in the scenario
             o  Total combined miles traveled by all trucks = 130.7 miles
             o  All packages were delivered on time
@@ -181,7 +174,7 @@ SOLUTION
             o  The ‘reporting’ (package statuses and information) can be verified through the user interface
                 o  All information is accurate
             o  Time needed to complete the look-up function is affected by changes in the number of packages to be delivered
-                o  If additional packages need to be delivered, additional packages will need to be added, resulting in inevitable collisions, thus resulting in longer look-up                     times unless structural change is made to the hash table (i.e., adding more buckets)
+                o  If additional packages need to be delivered, additional packages will need to be added, resulting in inevitable collisions, thus resulting in longer look-up times unless structural change is made to the hash table (i.e., adding more buckets)
             o  The data structure space usage is affected by changes in the number of packages to be delivered 
                 o  If additional packages are added, buckets in the hash table will become fuller, prompting a need for a solution on how to deal with collisions (potentially needing more space)
                 o  If packages are removed, buckets in the hash table will become emptier, freeing space usage for packages being added in the future to utilize
@@ -190,12 +183,12 @@ SOLUTION
                 o  However, alongside the assumption that more packages would need to be delivered (based on in increase in the number of trucks and delivery to more cities), the look-up function would become slower due to collisions as more packages would need to be added to the table
                 o  Look-up speed could be increased at the cost of additional space usage (more buckets would need to be added)
                 
-       Two other data structures that could meet the same requirements in the scenario
-        o  Data structure 1 = Dictionary / Nested Dictionary 
+       Two Other Data Structures That Could Meet The Same Requirements In The Scenario
+        o  Data Structure 1 = Dictionary / Nested Dictionary 
             o  Rather than storing packages as objects in the hash table, packages could be stored as key/value(s) pair in a dictionary
             o  This would allow for convenience of dictionary method usage (ex. update, pop, for key in dictionary loop)
             o  This would add consistency in the project as the distance data is implemented as a dictionary
-        o  Data structure 2 = Set with BST 
+        o  Data Structure 2 = Set with BST 
             o  Contrasting with the hash table, a set would allow for operations such as union, intersection, and difference when comparing two sets, filter to create a subset, and map to create a new set based on a function
             o  Packages could be established as a dynamic set or static set
 
