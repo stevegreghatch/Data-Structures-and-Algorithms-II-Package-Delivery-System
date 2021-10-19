@@ -16,7 +16,7 @@ SOLUTION
                     o  While placing packages, algorithm appends each package to packagesAlreadyPlaced list to prevent duplicates in event that algorithm needs to be called again (if deadlines change, if total number of packages change, etc.)
             o  Self-Adjusting Algorithm #2 - Nearest Neighbor Algorithm - setOptimalPackageListAllTrucks()
                 o   Algorithm sets optimal package list order to minimize route mileage for each truck
-                    o   searches all possible destinations to determine shortest location from hub, then loops to determine shortest distance from each location to the next, then optimally sets address key/names - loopToSetAllAddressesInOptimalRouteOrder() - getShortestDistanceFromHub(), getNextShortestDistanceForRouteList()
+                    o   Searches all possible destinations to determine shortest location from hub, then loops to determine shortest distance from each location to the next, then optimally sets address key/names - loopToSetAllAddressesInOptimalRouteOrder() - getShortestDistanceFromHub(), getNextShortestDistanceForRouteList()
                     o   Converts optimally sorted address key/names into optimally sorted street addresses - setOptimalPackageListAddressesT1()
                     o   Matches optimally sorted street addresses to package delivery destinations and sets package IDs in optimal order - setOptimalPackageListT1()
                     o   Replaces packageList with optimalPackageList
