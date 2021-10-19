@@ -146,18 +146,18 @@ SOLUTION
                     o  Meets requirement of not being delivered until 10:20am
                     o  To verify, see package 9 delivery time through UI console output
                         o  Package 9 is delivered at 10:33am         
-           Two Other Named Algorithms, Different From The Algorithms Implemented, That Would Meet The Rrequirements In The Scenario
-            o  Dijkstra’s Shortest Path Algorithm
-                o  Could be implemented to minimize total mileage
-            o  Breadth-First Search
-                o  Could also be implemented to minimize total mileage
-            o  How Both Algorithms Differ from my Algorithm
-                o  My solution is not graph based
-                o  My solution only finds the shortest path from one location to the next (irrespective of each location’s distance from starting location / hub)
-                o  Dijkstra’s Shortest Path Algorithm
-                    o  Dijkstra’s algorithm “finds the shortest path from a start vertex to each vertex in a graph”
-                o  Breadth-First search
-                    o  Breadth-First search “visits a starting vertex, then all vertices of distance 1 from that vertex, then of distance 2, and so on, without revisiting a vertex.”
+           o  Two Other Named Algorithms, Different From The Algorithms Implemented, That Would Meet The Rrequirements In The Scenario
+                 o  Dijkstra’s Shortest Path Algorithm
+                     o  Could be implemented to minimize total mileage
+                 o  Breadth-First Search
+                     o  Could also be implemented to minimize total mileage
+                 o  How Both Algorithms Differ from my Algorithm
+                     o  My solution is not graph based
+                     o  My solution only finds the shortest path from one location to the next (irrespective of each location’s distance from starting location / hub)
+                     o  Dijkstra’s Shortest Path Algorithm
+                         o  Dijkstra’s algorithm “finds the shortest path from a start vertex to each vertex in a graph”
+                     o  Breadth-First search
+                         o  Breadth-First search “visits a starting vertex, then all vertices of distance 1 from that vertex, then of distance 2, and so on, without revisiting a vertex.”
    
        If I Was To Do This Project Again, Other Than Attempting To Implement The Algorithms Previously Mentioned, I Would Do The Following
         o  Implement randomization of packages into the truck loading
