@@ -3,12 +3,9 @@
 SOLUTION
 
     o  Self-adjusting algorithms
-    
         o  Greedy Algorithm = setPackagesInTrucks()  
         o  Nearest Neighbor Algorithm = setOptimalPackageListAllTrucks()
-
     o  Overview of Program
-    
         o  Self Adjusting Algorighms
             o  Self-Adjusting Algorithm #1 - Greedy Algorithm - setPackagesInTrucks()
                 o  Overview: algorithm prioritizes earliest deadline times and fills up first two departing trucks (T1 and T2)
@@ -22,13 +19,10 @@ SOLUTION
                     o  algorithm then converts optimally sorted address key/names into optimally sorted street addresses - setOptimalPackageListAddressesT1()
                     o  algorithm then matches optimally sorted street addresses to package delivery destinations and sets package IDs in optimal order - setOptimalPackageListT1()
                     o  algorithm then replaces packageList with optimalPackageList
-
         o  Environment
             o  PyCharm on Windows 10 64-bit OS
-
         o  Space-Time Complexity
             o  Complexity of each major segment of program, and the entire program, using big-0 notation included in code comments
-
         o  Capability of solution to scale and adapt to a growing number of packages
             o  Hash table includes parameter to change initial capacity, allowing for additional package storage
             o  CSV import is capable of reading and storing additional packages from larger package lists
@@ -36,7 +30,6 @@ SOLUTION
             o  Self-adjusting algorithm #2: packages are self-sorted to determine optimal delivery route (lowest mileage)
             o  Main function deliveryAddressUpdateCheck: updates package delivery address based on specified criteria then re-initializes data
             o  Identified constraints are number of trucks, overall truck package capacity, and number of truck drivers
-
         o  Discussion of why the software is efficient and easy to maintain
             o  Efficiency 
                 o  Big-O time complexity of entire program = O(N^2) quadratic
@@ -52,7 +45,6 @@ SOLUTION
                     o  Main file only requires two function calls
                         o  mainUserInterfaceInit()
                         o  mainUserInterface()
-
         o  Strengths and weaknesses of the self-adjusting data structures
             o  Hash Table
                 o  Strengths
@@ -63,9 +55,7 @@ SOLUTION
                     o  Needs to be designed to avoid collisions
                     o  Slow if there are a high number of collisions
                     o  Helps to know all possible item keys beforehand (not always available)
-
     o  Self-adjusting data structure that can be used with self-adjusting algorithms to store the package data = Hash Table
-    
         o  Explanation of how data structure accounts for the relationship between the data points being stored
             o  Relationship between data points being stored and hash table
                 o  Data points being stored = package data
@@ -83,25 +73,19 @@ SOLUTION
             o  Relationship between self-adjusting algorithm #2 (nearest neighbor) and hash table
                 o  After determining optimal routes for all trucks, algorithm searches through package objects in hash table to verify that a match has been found between addresses                 in optimalPackageListAddresses (optimal street addresses) and pAddresses (addresses of packages from hash table)
                     o  Once match is found, pID (package ID) is appended to optimalPackageList
-
         o  Hash table developed without using any additional libraries or classes. Hash table has an insertion function that takes all required components as input and inserts all required components in the hash table 
             o  see Hash.py, Hash.py – insert, Package.py - packageHashTable.insert(pID, p)
-
     o  Look-up function developed that uses package IDs as input and returns all corresponding package data elements 
         o  see Hash.py – search, Package.py – getPackageDataByID
-
     o  User interface provided that allows viewing of status and info of any package at any time, and the total mileage traveled by all trucks
         o  see Main.py – mainUserInterface
         o  all screenshots are included in zip file submission in project_screenshots folder
             o  screenshot of the status of all packages at a time between 8:35am and 9:25am (time=8:45am)
             o  screenshot of the status of all packages at a time between 9:35am and 10:25am (time=10:15am)
             o  screenshot of the status of all packages at a time between 12:03pm and 1:12pm (time=1:05pm/13:05 military time) 
-
     o  Screenshot provided showing successful completion of the code, free from runtime errors or warnings, that includes total mileage traveled by all trucks
         o  screenshot included in zip file submission in project_screenshots folder
-
     o  Justification of core algorithms
-
         o  Strengths of the algorithms used
             o  Self-Adjusting Algorithm #1 - Greedy Algorithm - setPackagesInTrucks()
                 o  Ensures that packages with earliest delivery times are placed on first departing trucks
@@ -117,7 +101,6 @@ SOLUTION
                 o  Accounts for duplicate delivery addresses
                     o  Appends duplicate delivery address after first instance of address to maintain optimal route / package list order
                     o  see Distance.py, loopToSetAllAddressesInOptimalRouteOrder
-
         o  Verification that the algorithm used meets all requirements
             o  Total combined miles traveled by all trucks = 130.7 miles
                 o  Can verify through user interface, ‘View Truck Data’
@@ -126,7 +109,6 @@ SOLUTION
                         o  setTotalRouteMileageAllTrucks(), print(mileageToSetT1)
                         o  setTotalRouteMileageAllTrucks(), print(mileageToSetT2)
                         o  setTotalRouteMileageAllTrucks(), print(mileageToSetT3)
-
             o  All packages were delivered on time
                 o  Can verify through user interface, enter time >= 1159
                 o  Can also verify by enabling the following print functions:
@@ -142,7 +124,6 @@ SOLUTION
                     o  setAndReturnDeliveryTimesT1(), print(deliveryTimesToReturnT1)
                     o  setAndReturnDeliveryTimesT2(), print(deliveryTimesToReturnT2)
                     o  setAndReturnDeliveryTimesT3(), print(deliveryTimesToReturnT3)
-
             o  All packages were delivered according to their delivery specifications
                 o  Packages 13, 14, 15, 16, 19, and 20 initialized in truck 1
                     o  Meets requirement of being out for delivery on same truck
@@ -165,8 +146,7 @@ SOLUTION
                 o  Package 9 also initialized in truck 3
                     o  Meets requirement of not being delivered until 10:20am
                     o  To verify, see package 9 delivery time through UI console output
-                        o  Package 9 is delivered at 10:33am
-
+                        o  Package 9 is delivered at 10:33am         
         o  Two other named algorithms, different from the algorithms implemented, that would meet the requirements in the scenario
             o  Dijkstra’s Shortest Path Algorithm
                 o  Could be implemented to minimize total mileage
@@ -178,16 +158,13 @@ SOLUTION
                 o  Dijkstra’s Shortest Path Algorithm
                     o  Dijkstra’s algorithm “finds the shortest path from a start vertex to each vertex in a graph”
                 o  Breadth-first search
-                    o  Breadth-first search “visits a starting vertex, then all vertices of distance 1 from that vertex, then of distance 2, and so on, without                                         revisiting a vertex.”
-
+                    o  Breadth-first search “visits a starting vertex, then all vertices of distance 1 from that vertex, then of distance 2, and so on, without revisiting a vertex.”
     o  If I was to do this project again, other than attempting to implement the algorithms previously mentioned, I would do the following
         o  Implement randomization of packages into the truck loading
             o  This could allow for more optimal routes as the result of the lowest total mileage through randomization could be logged, then saved, to place the packages in that specific order, thus decreasing total mileage
         o  Redistribute my functions
             o  Most of them ended up being more conveniently placed in the Distance.py file (leaving the other files sparser)
-
     o  Justification of the data structure (hash table)
-
         o  Verification that the data structure used meets all requirements in the scenario
             o  Total combined miles traveled by all trucks = 130.7 miles
             o  All packages were delivered on time
@@ -195,14 +172,11 @@ SOLUTION
             o  An ‘efficient’ hash table with a look-up function is present
             o  The ‘reporting’ (package statuses and information) can be verified through the user interface
                 o  All information is accurate
-
             o  Time needed to complete the look-up function is affected by changes in the number of packages to be delivered
                 o  If additional packages need to be delivered, additional packages will need to be added, resulting in inevitable collisions, thus resulting in longer look-up                     times unless structural change is made to the hash table (i.e., adding more buckets)
-
             o  The data structure space usage is affected by changes in the number of packages to be delivered 
                 o  If additional packages are added, buckets in the hash table will become fuller, prompting a need for a solution on how to deal with collisions (potentially needing more space)
                 o  If packages are removed, buckets in the hash table will become emptier, freeing space usage for packages being added in the future to utilize
-
             o  Changes to the number of trucks or the number of cities would affect the look-up time and the space usage of the structure
                 o  As the hash table is only implemented to store package data, changes specific to the number of trucks or the number of cities would not directly affect the look-up time or the space usage of the data structure
                 o  However, alongside the assumption that more packages would need to be delivered (based on in increase in the number of trucks and delivery to more cities), the look-up function would become slower due to collisions as more packages would need to be added to the table
