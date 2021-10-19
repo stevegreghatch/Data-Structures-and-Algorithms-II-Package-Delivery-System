@@ -181,7 +181,6 @@ SOLUTION
                 o  As the hash table is only implemented to store package data, changes specific to the number of trucks or the number of cities would not directly affect the look-up time or the space usage of the data structure
                 o  However, alongside the assumption that more packages would need to be delivered (based on in increase in the number of trucks and delivery to more cities), the look-up function would become slower due to collisions as more packages would need to be added to the table
                 o  Look-up speed could be increased at the cost of additional space usage (more buckets would need to be added)
-
     o  Two other data structures that could meet the same requirements in the scenario
         o  Data structure 1 = Dictionary / Nested Dictionary 
             o  Rather than storing packages as objects in the hash table, packages could be stored as key/value(s) pair in a dictionary
